@@ -1,15 +1,30 @@
 <% include partials/header %>
+<div class="container">
+    <header class="jumbotron">
 
-<h1>'Tis da campgrounds page dough</h1>
+        <div class="container">
+            <h1>'Tis da campgrounds page dough</h1>
+            <p>
+                <a href="/" class="btn btn-primary btn-large">Go back</a>
+                <a href="/campgrounds/new" class="btn btn-secondary btn-large">Add new Campground</a>
+            </p>
+        </div>
+    </header>
+<main>
+    <div class="row gridr">
+        <%campgrounds.forEach((camp) => {%>
+            <div class="col-md-4 col-sm-6">
+                <div class="img-thumbnail img-fluid text-center text-capitalize">
+                    <img class='thumbsUp' src="<%=camp.imgSrc%>">
+                    <div class="caption"><h5><span class="bold"><%= camp.name%> campground!</span></h5></div>
+                </div>
 
-<a href="/">Go back</a>
-<a href="/campgrounds/new">Add new Campground</a>
-
-<%campgrounds.forEach(camp => {%>
-    <li>we've got ourself a <span class="bold"><%= camp.name%> campground!</span>
-        <img src=<%=camp.imgSrc%>>
-    </li>
-<%})%>
+            </div>
+        <%})%>
+    </div>
+</main>
 
 
+
+</div>
 <% include partials/footer %>
