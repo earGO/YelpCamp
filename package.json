@@ -1,0 +1,29 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "a capstone for a webDevBootcamp",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/earGO/YelpCamp.git"
+  },
+  "keywords": [
+    "web",
+    "developer",
+    "bootcamp"
+  ],
+  "author": "earGO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/earGO/YelpCamp/issues"
+  },
+  "homepage": "https://github.com/earGO/YelpCamp#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}

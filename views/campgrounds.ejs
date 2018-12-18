@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<h1>'Tis da campgrounds page dough</h1>
+
+<a href="/">Go back</a>
+
+<%campgrounds.forEach(camp => {%>
+    <li>we've got ourself a <span class="bold"><%= camp.name%> campground!</span>
+        <img src=<%=camp.imgSrc%>>
+    </li>
+<%})%>
+
+
+<% include partials/footer %>
