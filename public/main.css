@@ -1,6 +1,4 @@
-h1 {
-    background-color: #2980b9;
-}
+
 
 .thumbsUp {
     width: 100%;
@@ -9,4 +7,8 @@ h1 {
 .gridr {
     display: flex;
     flex-wrap: wrap;
+}
+
+.thumb {
+    margin: 2.66%;
 }
