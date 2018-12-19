@@ -19,10 +19,10 @@ var campgroundSchema = new mongoose.Schema({
 
 var Campground = mongoose.model("Campground",campgroundSchema);
 
-
+/*
 Campground.create({
-        name:'river',
-        imgSrc:'https://www.appletonmn.com/vertical/Sites/%7B4405B7C1-A469-4999-9BC5-EC3962355392%7D/uploads/campground_(2).jpg'
+        name:'forest',
+        imgSrc:'https://pixabay.com/get/ef3cb00b2af01c22d2524518b7444795ea76e5d004b0144590f0c37ca6e5b4_340.jpg'
     },
     ((err,campground) => {
         if(err) {
@@ -32,11 +32,13 @@ Campground.create({
         }
     })
 )
+*/
 
+/*
 var campgrounds = [
     {name:'river', imgSrc:'https://www.appletonmn.com/vertical/Sites/%7B4405B7C1-A469-4999-9BC5-EC3962355392%7D/uploads/campground_(2).jpg'},
-    {name:'mountainside', imgSrc:'https://pixabay.com/get/e83db40e28fd033ed1584d05fb1d4e97e07ee3d21cac104491f5c17ba2ecbdb9_340.jpg'},
-    {name:'forest', imgSrc:'https://pixabay.com/get/ef3cb00b2af01c22d2524518b7444795ea76e5d004b0144590f0c37ca6e5b4_340.jpg'},
+    {name:'mountainside', imgSrc:''},
+    {name:'forest', imgSrc:''},
     {name:'rv campground',imgSrc:'https://farm7.staticflickr.com/6014/6015893151_044a2af184.jpg'},
     {name:'rv campground',imgSrc:'https://farm7.staticflickr.com/6014/6015893151_044a2af184.jpg'},
     {name:'rv campground',imgSrc:'https://farm7.staticflickr.com/6014/6015893151_044a2af184.jpg'},
@@ -46,12 +48,22 @@ var campgrounds = [
     {name:'rv campground',imgSrc:'https://farm7.staticflickr.com/6014/6015893151_044a2af184.jpg'}
     ]
 
+*/
+
 app.get('/', (req, res) => {
     res.render('landing')
 })
 
 app.get('/campgrounds',(req,res) => {
-    res.render('campgrounds',{campgrounds:campgrounds})
+
+    Campground.find({},(err,allCampgrounds)=> {
+        if(err){
+            console.log('ooops!')
+            console.log(err)
+        } else {
+            res.render('campgrounds',{campgrounds:allCampgrounds})
+        }
+    })
 })
 
 app.get('/campgrounds/new',(req,res) => {
@@ -60,8 +72,14 @@ app.get('/campgrounds/new',(req,res) => {
 
 app.post('/campgrounds',(req,res) => {
     var newCampground = {name: req.body.name, imgSrc:req.body.imgSrc}
-    //get data from form and add to campgrounds array
-    campgrounds.push(newCampground)
+    //get data from form and push it to database
+    Campground.create(newCampground,(err,newCampground)=>{
+        if(err){
+            console.log('got error adding new campground',err)
+        } else {
+            console.log('added new campground',newCampground)
+        }
+    })
     //redirect back to campgrounds page
     res.redirect('/campgrounds')
 })
