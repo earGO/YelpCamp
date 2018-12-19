@@ -1,11 +1,37 @@
-var express = require('express');
-var bodyParser = require('body-parser')
-var app = express();
-var port = 3000;
+var express = require('express'),
+    bodyParser = require('body-parser'),
+    mongoose = require("mongoose"),
+    app = express(),
+    port = 3000;
 
 app.set('view engine','ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}));
+
+mongoose.connect("mongodb://localhost/yelp_camp",{useNewUrlParser:true});
+
+//schema setuo
+
+var campgroundSchema = new mongoose.Schema({
+    name:String,
+    imgSrc:String
+})
+
+var Campground = mongoose.model("Campground",campgroundSchema);
+
+
+Campground.create({
+        name:'river',
+        imgSrc:'https://www.appletonmn.com/vertical/Sites/%7B4405B7C1-A469-4999-9BC5-EC3962355392%7D/uploads/campground_(2).jpg'
+    },
+    ((err,campground) => {
+        if(err) {
+            console.log('uuups, error',err)
+        } else {
+            console.log('all good, got new campground',campground)
+        }
+    })
+)
 
 var campgrounds = [
     {name:'river', imgSrc:'https://www.appletonmn.com/vertical/Sites/%7B4405B7C1-A469-4999-9BC5-EC3962355392%7D/uploads/campground_(2).jpg'},

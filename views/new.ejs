@@ -2,18 +2,24 @@
 <% include partials/nav %>
 
 <div class="container">
-    <header class="jumbotron">
+    <header class="jumbotron jumboNew">
 
         <div class="container">
-            <h1>Add new campground</h1>
 
-            <a href="/campgrounds" class="btn btn-primary btn-large">Go back</a>
-
-            <form method="post" action="/campgrounds">
-                <input type="text" name="name" placeholder="name campground">
-                <input type="text" name="imgSrc" placeholder="put in image url">
-                <button type="submit" class="btn btn-success btn-large">Add campground</button>
+            <form method="post" action="/campgrounds" class="container ">
+                <h1>Add new campground</h1>
+                <div class="addNewInput input-group mb-3">
+                    <input type="text" name="name" placeholder="name campground" class="form-control">
+                </div>
+                <div class="addNewInput input-group mb-3">
+                    <input type="text" name="imgSrc" placeholder="put in image url" class="form-control">
+                </div>
+                <button type="submit"
+                        class="btn btn-primary btn-large form-control addNewInput"
+                        >Add campground</button>
+                <a href="/campgrounds" class="link link-prinary btn-large addNewInput">Go back</a>
             </form>
+
         </div>
     </header>
 </div>
