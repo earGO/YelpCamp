@@ -19,7 +19,10 @@
             <div class="col-md-4 col-sm-6">
                 <div class="img-thumbnail img-fluid text-center text-capitalize thumb">
                     <img class='thumbsUp' src=<%=camp.imgSrc%>>
-                    <div class="caption"><h5><span class="bold"><%= camp.name%> campground!</span></h5></div>
+                    <div class="caption"><h5><span class="bold"><%= camp.name%></span></h5></div>
+                    <p>
+                        <a href="/campgrounds/<%=camp._id %>" class="btn btn-primary">More</a>
+                    </p>
                 </div>
 
             </div>

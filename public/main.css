@@ -1,4 +1,10 @@
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
 
+    display: flex;
+    align-items: center;
+}
 
 .thumbsUp {
     width: 100%;
@@ -19,4 +25,62 @@
 
 .jumboNew {
     background-color: white;
+}
+
+.container {
+    width: 100%;
+    padding: 1.66%;
+    margin: 0 mr-auto;
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 500px) {
+    .container {
+        width: 90%;
+        padding: 1.66%;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+/* Smaller than Medium devices (tablets, 768px and up)*/
+@media (min-width: 690px) {
+    .container {
+        width: 75%;
+        padding: 1.66%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .container {
+        width: 60%;
+        padding: 1.66%;
+    }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .container {
+        width: 70%;
+        padding: 1.66%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .container {
+        width: 60%;
+        padding: 1.66%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1350px) {
+    .container {
+        width: 45%;
+        padding: 0.66%;
+    }
 }
