@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+<% include ../partials/nav %>
+
+<div class="container">
+    <header class="jumbotron jumboNew">
+
+        <div class="container">
+
+            <form method="post" action="/campgrounds/<%=campground._id%>/comments" class="container ">
+                <h1>Add new comment to <%= campground.name %></h1>
+                <div class="addNewInput input-group mb-3">
+                    <input type="text" name="comment[author]" placeholder="commen author" class="form-control">
+                </div>
+                <div class="addNewInput input-group mb-3">
+                    <input type="text" name="comment[text]" placeholder="comment text" class="form-control">
+                </div>
+                <button type="submit"
+                        class="btn btn-primary btn-large form-control addNewInput"
+                >Add comment</button>
+                <a href="/campgrounds" class="link link-prinary btn-large addNewInput">Go back</a>
+            </form>
+
+        </div>
+    </header>
+</div>
+
+
+
+
+<% include ../partials/footer %>
