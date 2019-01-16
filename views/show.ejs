@@ -18,6 +18,17 @@
             </p>
 
         </div>
+        <div class="col-lg-12 text-justify m-2">
+
+                <% campground.comments.forEach(comment => {%>
+            <p>
+                <strong> <%= comment.author %></strong>
+                 - <%= comment.text %>
+            </p>
+                <%})%>
+
+
+        </div>
     </div>
 </main>
 
