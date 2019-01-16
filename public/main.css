@@ -1,3 +1,7 @@
+body {
+    background-color: white;
+}
+
 .vertical-center {
     min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
     min-height: 100vh; /* These two lines are counted as one :-)       */
@@ -31,6 +35,18 @@
     width: 100%;
     padding: 1.66%;
     margin: 25px auto;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail .caption-full {
+    padding: 10px;
 }
 
 /* Small devices (landscape phones, 576px and up)*/
